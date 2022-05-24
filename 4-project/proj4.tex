@@ -1,0 +1,123 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, top=3cm, text={17cm, 24cm}]{geometry}
+\usepackage{times}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks = true, hypertexnames = false}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\Huge
+			\textsc{Vysoké učení technické v~Brně} \\
+			\huge
+			\textsc{Fakulta informačních technologií} \\
+			\vspace{\stretch{0.382}}
+			\LARGE
+			Typografie a~publikování\,--\,4.~projekt \\
+			\Huge
+			Bibliografické citace
+			\vspace{\stretch{0.618}}
+		\end{center}
+
+		{\Large
+			\today
+			\hfill
+			Elizaveta Syanova
+		}
+	\end{titlepage}
+	
+	
+	\textbf{\LARGE Dělení nulou}
+
+	\section{Definice}
+	
+	Nula je číslo, a číslice, která se použivá k vyjádření tohoto čísla v číslicích.
+	
+	Dělení nulou v matematice - dělení, ve kterém dělitel je nulový. 
+	V běžné aritmetice ten výraz nemá žádný význam, protože neexistuje žádné číslo, které po vynásobení dává 0. Podrobnější informace o nule v matimatice dnes lze dočíst v \cite{jonasova}.
+	
+	Vavilované jako první používali nulu k práci s desítkami a stovkami, jak je uvedeno v \cite{babalao}.
+
+	\section{Věda a dělení nulou}
+
+
+	\subsection{aritmetika}
+	
+	V běžné aritmetice (se skutečnými čísly) nemá tento výraz smysl, protože:
+	
+	\begin{itemize}
+	    \item pri $a\neq 0$ neexistuje žádné číslo, které po vynásobení 0 dává a, proto nelze žádné číslo brát jako kvocient $\frac{a}{0}$;
+	    \item pri $a = 0$ dělení nulou je taky nedefinováno, protože jakékoli číslo vynásobené 0 dává 0 a lze jej brát jako kvocient $\frac{0}{0}$.
+	\end{itemize}
+    Vice o deleni $\frac{0}{0}$ najdete v \cite{barukcic} a v \cite{seife}.
+
+	\subsection{algebra}
+	
+	Podle standardních pravidel aritmetiky dělení nulou v oborech přirozených čísel, celých čísel, racionálních čísel, reálných čísel a komplexních čísel (nerozšířených o nekonečno) není definováno.
+	
+	Dělení nulou není povoleno v mnoha algebraických strukturách (například pole, prstence). Ale koncept prstenu však lze rozšířit, aby bylo možné dělení nulou. Výsledná struktura se nazývá kolo.(Wheel theory)
+
+
+	\subsection{informatika}
+
+    Standard IEEE pro dvojkovou aritmetiku v plovoucí řádové čárce, podporovaný skoro všemi moderními procesory, specifikuje, že každá operace v plovoucí řádové čárce včetně dělení nulou má dobře definovaný výsledek. V IEEE 754 je $a \div 0$ kladné nekonečno, pokud je a kladné, záporné nekonečno, pokud je a záporné, a NaN (not a number), pokud $a = 0$. Znaménka nekonečen se mění při dělení $–0$. To je možné díky tomu, že v IEEE 754 jsou dvě nuly, kladná a záporná viz. \cite{ieee8, ieee19}
+
+
+    V programování, v závislosti na programovacím jazyce, datovém typu a hodnotě dividendy, může pokus o dělení nulou vést k různým důsledkům.
+    
+    \section{V beznem zivote}
+    
+    Koncept nuly existuje od nepaměti a v různých kulturách byl vnímán odlišně, například symbol „nula“ pro Inky a Mayy je něco hmotného: je to šňůra bez uzlu pro Inky, skořápka pro Maya a klas pro Aztéky viz. \cite{laurencich}
+    
+    V současné době nula je taky příčinou mnoha sporů a diskusí na téma nekonečna a existence světa.Vice o tom najdete v \cite{moskowitz, pavo}. Problematice recepce nuly v antické kultuře se venuje \cite{louchmanova}.
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Citace %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newpage
+	\bibliographystyle{czechiso}
+	\renewcommand{\refname}{Literatura}
+	\bibliography{proj4}
+	
+	\begin{thebibliography}{9}
+        \bibitem{babalao} 
+        Babalao, F. R. \textit{History of the number zero and why you should never divide by zero.} Institute of engineering technology and natural sciences, Belgorod: 2018.
+        Dostupne z: https://cyberleninka.ru/article/n/istoriya-chisla-nol-i-pochemu-nelzya-delit-na-nol/viewer
+        
+        \bibitem{barukcic}
+        Barukčić, I. \textit{ Zero Divided by Zero Equals One.} Journal of Applied Mathematics and Physics, Sv.6. č.4., 2018.
+        
+         \bibitem{ieee8}
+        IEEE Standard for Floating-Point Arithmetic:IEEE Std 754-2008. Str.1-70, 29. srpna 2008, DOI: 10.1109/IEEESTD.2008.4610935.
+        Dostupne z: https://irem.univ-reunion.fr/IMG/pdf/ieee-754-2008.pdf
+        
+        \bibitem{ieee19}
+        IEEE Standard for Floating-Point Arithmetic:IEEE Std 754-2019 (Revision of IEEE 754-2008). Str.1-84, 22. července 2019, DOI: 10.1109/IEEESTD.2019.8766229.
+        
+        \bibitem{jonasova} 
+        Jonašová, L. \textit{Nula a nekonečno v matematice a příbuzných přírodních vědách. Analýza těchto pojmů v učebnicích od předminulého století dodnes.} [online]. Praha, 2012 [cit. 2021-04-19]. Diplomová práce. Univerzita Jana Amose Komenského. Vedoucí práce Ivan Fischer.
+        Dostupné z: https://theses.cz/id/e2szut/
+        
+        \bibitem{laurencich} 
+        Laurencich-Minelli, L. \textit{An interesting concept of the Mesoamerican and Andean "objective zero" and the logic of the Inca gods-numbers.}  [online],rev. 2015, vid.[2021-4-19].
+        
+        Dostupne z: https://webs.ucm.es/info/especulo/numero27/cero.html
+        
+        \bibitem{louchmanova} 
+        Louchmanová, K. \textit{Nula ve vztahu k Zenónovým aporiím} [online]. Ostrava, 2015 [cit. 2021-04-19]. Bakalářská práce. Ostravská univerzita, Filozofická fakulta Vedoucí práce doc. Mgr. Marek Otisk, Ph.D. 
+        Dostupné z: https://theses.cz/id/uw3q0h/
+
+        \bibitem{moskowitz} 
+        Moskowitz, C. \textit{What is nothing?}  [online],rev. 20. října 2015, vid.[2021-4-19].
+
+        Dostupne z: https://www.foxnews.com/science/what-is-nothing-physicists-debate
+        
+        \bibitem{pavo}
+        Pavo, B. \textit{Anti Aristotle: The Division of Zero by Zero.}  ln: Ilija B., editor, Journal of Applied Mathematics and Physics, Sv.4. č.4., 2016.
+        
+        \bibitem{seife} 
+        Seife, C. \textit{Zero: The Biography of a Dangerous Idea.}  1. vydání. Boston: Viking Adult, 2000. ISBN 978-0670884575.
+    \end{thebibliography}
+
+\end{document}

@@ -1,0 +1,194 @@
+\documentclass[10pt, hyperref={unicode}, xcolor=dvipsnames]{beamer}
+
+
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times} 
+\usepackage{listings} 
+\usepackage{xcolor} 
+\usepackage{graphics} 
+\usepackage{booktabs}
+
+
+\usetheme{Szeged}
+\usecolortheme{spruce}
+
+
+\definecolor{keywordpurple}{RGB}{167,29,93}
+\definecolor{commentgray}{RGB}{150,152,150}
+\definecolor{stringblue}{RGB}{24,54,145}
+
+
+\lstset{
+	basicstyle=\footnotesize,
+	commentstyle=\color{commentgray},
+	frame=single,
+	keepspaces=true,
+	keywordstyle=\color{keywordpurple},
+	language=C,
+	morekeywords={new, use},
+	numbers=left,
+	stringstyle=\color{stringblue},
+	showstringspaces=false,
+	showspaces=false,
+	showtabs=false,
+	tabsize=4,
+}
+
+
+
+\title{Typografie a~publikování\,--\,5.~projekt}
+\subtitle{Binární strom}
+\author{Elizaveta Syanova}
+\date{\today}
+\institute
+{
+	Vysoké učení technické v~Brně\\
+	Fakulta informačních technologií
+}
+
+
+\defbeamertemplate*{footline}{shadow theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertframenumber\,/\,\inserttotalframenumber\hfill\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\begin{document}
+
+
+\maketitle
+
+\section{Introduction}
+
+\begin{frame}
+\frametitle{Introduction}
+    % číslovaný obsah
+	\setbeamertemplate{section in toc}[sections numbered]
+	% skrytí podsekcí v obsahu
+	\tableofcontents[hideallsubsections]
+
+\end{frame}
+
+\section{Definice}
+
+
+\begin{frame}
+
+    \begin{columns}
+    \frametitle{Definice}
+    
+    \column{0.5\textwidth}
+        \textbf{Binární strom} je hierarchická datová struktura, ve které každý uzel má nejvýše dva potomky. 
+    \column{0.5\textwidth}
+    \end{columns} 
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Typy binárních stromů}
+    \setbeamercovered{transparent}
+    
+    \begin{itemize}
+        \item<1-> \textbf{Plný binární strom} všechny jeho listy jsou ve stejné hloubce.
+        \item<2-> \textbf{Úplný binární strom } každý vnitřní uzel má dva syny.
+        \item<3-> \textbf{Vyvážený binární strom } hloubka listů se od sebe liší maximálně o jedna.
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+    Stromy se dělí na:
+    
+    \setbeamercovered{transparent}
+    
+    \begin{itemize}
+        \item<1-> Uspořádané (ordered tree)
+        \item<2-> Neuspořádané (unordered tree)
+    \end{itemize}
+\end{frame}
+
+
+
+\section{Práce s binárním stromem}
+
+
+\begin{frame}
+    V praktickém programování je obvykle binární strom reprezentován dvěma způsoby: 
+    
+    \begin{itemize}
+        \item<1-> Pomocí \alert{dynamické struktury}, kde jsou hrany reprezentovány ukazateli.
+        \item<2-> Pomocí \alert{pole}.
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    
+    \begin{lstlisting}[title={Příklad struktury:}]
+    struct  TreeNode
+    {
+        double data; 
+        TreeNode *left;  
+        TreeNode *right;
+    }
+    \end{lstlisting}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+    
+    \begin{lstlisting}[title={Příklad algoritmu s poli (Řazení haldou):}]
+    void razeni_haldou (double array[], int n) {
+        int z; 
+        int i;
+        double temp;
+    
+        for (z = 1; z < n; z++) {
+            temp = array[z];
+            i = z;
+        
+            while (i > 0 && temp > array[PARENT(i)]) {
+                array[i] = array[PARENT(i)];
+                i = PARENT(i);
+            }
+            array[i] = temp;
+        
+        ...
+    }
+    \end{lstlisting}
+\end{frame}
+
+
+
+\section{Použité zdroje}
+
+\begin{frame}
+\frametitle{Použité zdroje}
+\begin{thebibliography}{10}
+		\bibitem[Stromy]{stromy} Stromy
+		\newblock \texttt{http://uzlabina2.aspone.cz/stromy.aspx}
+
+		\bibitem[Habr]{stromy} Habr: Binárné stromy
+		\newblock \texttt{https://habr.com/ru/post/267855/}
+		
+		\bibitem[Wiki]{stromy} Wikipedia: Heapsort
+		\newblock \texttt{https://en.wikipedia.org/wiki/Heapsort}
+		
+		\bibitem[ADT]{adt} Abstraktní datové typy
+		\newblock \texttt{https://slidetodoc.com/dal-abstraktn-datov-typy-abstraktn-datov-typy-adt/}
+	\end{thebibliography}
+\end{frame}
+
+
+
+\end{document}
